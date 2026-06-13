@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisMark Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            background-color: #f0f7fb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AegisMark Privacy Policy</h1>
+        <p style="text-align: center; color: #7f8c8d;">
+            <strong>Last Updated</strong>: June 13, 2026
+        </p>
+    </div>
+
+    <div class="content">
+        <h2>Scope</h2>
+        <p>This Privacy Policy applies only to AegisMark, a desktop watermarking application published by Massimo Yao ("Developer").</p>
+        <p>AegisMark is designed to perform its core features locally on the user's device. The app does not upload watermark templates, screen contents, browser URLs, screenshot files, or device information to developer servers.</p>
+
+        <h2>Data Processed by AegisMark</h2>
+        <p>AegisMark may process the following data locally to provide watermarking features:</p>
+        <ul>
+            <li>Watermark layers, styles, layout settings, display rules, custom variables, keyboard shortcuts, and app preferences.</li>
+            <li>User-selected watermark images and user-selected screenshot folders.</li>
+            <li>Local device context used in watermark variables, such as user name, computer name, device model, date, time, display name, frontmost app name, and frontmost app bundle identifier.</li>
+            <li>Browser URL or website domain information when the user enables website-based watermark rules and grants Automation permission.</li>
+            <li>Network SSID information when the user enables network-based watermark rules.</li>
+        </ul>
+        <p>This data is processed locally and is not transmitted to the Developer.</p>
+
+        <h2>Screen Recording Permission</h2>
+        <p>AegisMark uses macOS Screen Recording permission only for window masking. Window masking allows the app to hide watermark layers inside user-selected app window regions while keeping the watermark visible elsewhere.</p>
+        <p>When this feature is enabled, AegisMark reads on-screen window metadata such as window bounds, window number, owning process ID, and the associated app bundle identifier. This metadata is used only to calculate the regions where watermark layers should be hidden.</p>
+        <p>AegisMark does not use Screen Recording permission to record video, capture audio, perform OCR, upload screen contents, or send screen data to developer servers.</p>
+        <p>Screen Recording window metadata is processed in memory and is not stored by the Developer.</p>
+
+        <h2>Screenshot Watermarking</h2>
+        <p>Screenshot watermarking is performed on image files in a folder selected by the user. AegisMark monitors the selected folder, reads recognized screenshot files locally, applies visible watermark layers, and saves a watermarked output file to the same selected folder.</p>
+        <p>If invisible watermarking is available, AegisMark may embed a local payload into the output image. The payload may include user name, computer name, device model, source file name, timestamp, active app name, and active app bundle identifier.</p>
+        <p>The Developer does not receive screenshot files, screenshot contents, or embedded watermark payloads. Watermarked screenshots remain in the user-selected folder until the user deletes or moves them.</p>
+
+        <h2>Automation Permission</h2>
+        <p>AegisMark may request Automation permission to read the active browser URL for website-based watermark rules. This is used to decide whether a user-configured watermark rule should be active for the current website.</p>
+        <p>Browser URL and website domain information are processed locally and are not transmitted to the Developer.</p>
+
+        <h2>Files and Folders Access</h2>
+        <p>AegisMark uses user-selected file and folder access to read watermark images and process screenshots in a user-selected folder. The app stores security-scoped bookmarks locally so it can continue to access the selected folder after the user enables screenshot watermarking.</p>
+        <p>Only files and folders selected or authorized by the user are accessible to the app.</p>
+
+        <h2>Local Storage and Retention</h2>
+        <p>AegisMark stores app settings, watermark configurations, rules, custom variables, keyboard shortcuts, screenshot folder security bookmarks, and purchase status in the app sandbox on the user's device.</p>
+        <p>This local data is retained until the user changes the settings, removes generated files, resets the app, or deletes the app and its associated data.</p>
+
+        <h2>Purchases</h2>
+        <p>AegisMark uses Apple StoreKit for in-app purchases, subscriptions, purchase restoration, and lifetime unlocks. Apple manages the payment flow. The Developer does not directly receive payment card information.</p>
+
+        <h2>Third-Party Sharing</h2>
+        <p>AegisMark does not sell user data, use user data for advertising tracking, or share screen recording data, screenshot contents, browser URLs, watermark settings, or local device context with third parties.</p>
+        <p>Information may be disclosed only if required by applicable law, regulation, legal process, or governmental request.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>AegisMark is not directed to children under the age of 13. The Developer does not knowingly collect personal information from children.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>This Privacy Policy may be updated from time to time. Updated versions will be published at this page.</p>
+
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+            <p><strong>Developer</strong>: Massimo Yao</p>
+            <p><strong>Email</strong>: <a href="mailto:chenyao6134@gmail.com">chenyao6134@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Massimo Yao. All rights reserved.</p>
+        <p><a href="index.html" style="color: #3498db; text-decoration: none;">Back to Home</a></p>
+    </div>
+</body>
+</html>
