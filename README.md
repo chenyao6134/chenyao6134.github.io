@@ -1,4 +1,4 @@
-# LifeChoice 隐私与服务页面
+# Massimo Apps 隐私与服务页面
 
 ## 项目概述
 
