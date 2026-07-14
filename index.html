@@ -3,142 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massimo Yao - 隐私与服务</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Massimo Yao 应用的隐私政策、服务条款与技术支持入口。">
+    <title>Massimo Yao · Privacy &amp; Support</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --background: #f5f5f7;
+            --surface: rgba(255, 255, 255, 0.88);
+            --surface-strong: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #66666d;
+            --accent: #0066cc;
+            --accent-soft: rgba(0, 102, 204, 0.10);
+            --border: rgba(0, 0, 0, 0.10);
+            --shadow: 0 24px 70px rgba(0, 0, 0, 0.10);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #101012;
+                --surface: rgba(30, 30, 33, 0.92);
+                --surface-strong: #232326;
+                --text: #f5f5f7;
+                --secondary: #b5b5bc;
+                --accent: #69b4ff;
+                --accent-soft: rgba(105, 180, 255, 0.13);
+                --border: rgba(255, 255, 255, 0.14);
+                --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Segoe UI", sans-serif;
+            background: var(--background);
+            color: var(--text);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            min-height: 100vh;
+            margin: 0;
+            padding: 42px 20px;
+            background:
+                radial-gradient(circle at 12% 4%, var(--accent-soft), transparent 34rem),
+                var(--background);
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .shell {
+            width: min(940px, 100%);
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #7f8c8d;
-            margin-bottom: 40px;
-        }
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
-            background-color: #3498db;
-            border-radius: 50%;
+
+        header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: white;
+            gap: 18px;
+            padding: 38px 42px 28px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(145deg, var(--surface-strong), var(--surface));
         }
-        .nav-links {
+
+        .monogram {
+            display: grid;
+            flex: 0 0 auto;
+            width: 62px;
+            height: 62px;
+            place-items: center;
+            border-radius: 17px;
+            color: #ffffff;
+            background: linear-gradient(145deg, #1685f8, #0058b6);
+            box-shadow: 0 10px 24px rgba(0, 102, 204, 0.25);
+            font-size: 1.15rem;
+            font-weight: 750;
+            letter-spacing: -0.04em;
+        }
+
+        .header-copy {
+            min-width: 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.9rem, 6vw, 2.8rem);
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+        }
+
+        .subtitle {
+            margin: 7px 0 0;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .toolbar {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 40px;
+            justify-content: flex-end;
+            padding: 18px 42px 0;
         }
-        .nav-link {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-        .nav-link:hover {
-            background-color: #2980b9;
-        }
+
         .language-selector {
-            margin-bottom: 20px;
+            display: inline-flex;
+            gap: 3px;
+            padding: 3px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: var(--background);
         }
-        .language-btn {
-            padding: 8px 16px;
-            background-color: #ecf0f1;
-            border: none;
-            border-radius: 5px;
-            color: #34495e;
+
+        .language-button {
+            min-width: 76px;
+            padding: 7px 12px;
+            border: 0;
+            border-radius: 6px;
+            color: var(--secondary);
+            background: transparent;
             cursor: pointer;
-            font-size: 14px;
-            margin: 0 5px;
-            transition: background-color 0.3s ease;
+            font: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
         }
-        .language-btn:hover,
-        .language-btn.active {
-            background-color: #3498db;
-            color: white;
+
+        .language-button[aria-pressed="true"] {
+            color: var(--text);
+            background: var(--surface-strong);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.10);
         }
-        .footer {
-            margin-top: 50px;
-            color: #95a5a6;
-            font-size: 14px;
+
+        .language-panel {
+            padding: 30px 42px 46px;
+        }
+
+        .section-heading {
+            margin: 0 0 18px;
+            font-size: 1.08rem;
+            letter-spacing: -0.01em;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .resource-card {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--surface-strong);
+        }
+
+        .resource-card.featured {
+            border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+            background: linear-gradient(145deg, var(--accent-soft), var(--surface-strong) 58%);
+        }
+
+        .app-heading {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .app-mark {
+            display: grid;
+            width: 36px;
+            height: 36px;
+            place-items: center;
+            border-radius: 10px;
+            color: var(--accent);
+            background: var(--accent-soft);
+            font-size: 0.82rem;
+            font-weight: 750;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.18rem;
+            line-height: 1.25;
+        }
+
+        .app-description {
+            min-height: 3.2em;
+            margin: 12px 0 19px;
+            color: var(--secondary);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .document-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            padding: 7px 11px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            background: var(--surface);
+            text-decoration: none;
+            font-size: 0.86rem;
+            font-weight: 600;
+            transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+        }
+
+        .document-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 42px;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 0.84rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .document-link {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 12px;
+            }
+
+            .shell {
+                border-radius: 18px;
+            }
+
+            header {
+                align-items: flex-start;
+                padding: 28px 24px 24px;
+            }
+
+            .monogram {
+                width: 50px;
+                height: 50px;
+                border-radius: 14px;
+            }
+
+            .toolbar,
+            .language-panel,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .toolbar {
+                justify-content: flex-start;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-description {
+                min-height: 0;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 5px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">C</div>
-        <h1>Massimo Yao</h1>
-        <p class="subtitle">隐私政策与服务条款</p>
+    <main class="shell">
+        <header>
+            <div class="monogram" aria-hidden="true">MY</div>
+            <div class="header-copy">
+                <h1>Massimo Yao</h1>
+                <p class="subtitle">Privacy, terms, and support for our apps</p>
+            </div>
+        </header>
 
-        <div class="language-selector">
-            <button class="language-btn active" onclick="switchLanguage('zh')">中文</button>
-            <button class="language-btn" onclick="switchLanguage('en')">English</button>
+        <div class="toolbar">
+            <div class="language-selector" role="group" aria-label="Language">
+                <button class="language-button" type="button" data-language-button="zh" aria-controls="panel-zh" aria-pressed="true">中文</button>
+                <button class="language-button" type="button" data-language-button="en" aria-controls="panel-en" aria-pressed="false">English</button>
+            </div>
         </div>
 
-        <div class="nav-links">
-            <a href="privacy-policy-zh.html" class="nav-link zh-link">隐私政策</a>
-            <a href="terms-of-service-zh.html" class="nav-link zh-link">用户服务协议</a>
-            <a href="support-zh.html" class="nav-link zh-link">技术支持</a>
+        <section class="language-panel" id="panel-zh" data-language-panel="zh">
+            <h2 class="section-heading">应用文档</h2>
+            <div class="resource-grid">
+                <article class="resource-card featured">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">HD</span>
+                        <h2>HideDesk</h2>
+                    </div>
+                    <p class="app-description">屏幕共享、演示和录制期间的桌面隐私保护工具。</p>
+                    <nav class="document-links" aria-label="HideDesk 文档">
+                        <a class="document-link" href="hidedesk-privacy-policy-zh.html">隐私政策</a>
+                        <a class="document-link" href="terms-of-service-zh.html">服务条款</a>
+                        <a class="document-link" href="support-zh.html">技术支持</a>
+                    </nav>
+                </article>
 
-            <a href="privacy-policy-en.html" class="nav-link en-link" style="display: none;">Privacy Policy</a>
-            <a href="terms-of-service-en.html" class="nav-link en-link" style="display: none;">Terms of Service</a>
-            <a href="support-en.html" class="nav-link en-link" style="display: none;">Technical Support</a>
-        </div>
+                <article class="resource-card">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">AM</span>
+                        <h2>AegisMark</h2>
+                    </div>
+                    <p class="app-description">桌面水印、截图水印与内容归属保护工具。</p>
+                    <nav class="document-links" aria-label="AegisMark 文档">
+                        <a class="document-link" href="privacy-policy-aegismark-en.html" hreflang="en">隐私政策（English）</a>
+                        <a class="document-link" href="terms-of-service-zh.html">服务条款</a>
+                        <a class="document-link" href="support-zh.html">技术支持</a>
+                    </nav>
+                </article>
 
-        <p>© 2025 Massimo Yao. All rights reserved.</p>
-    </div>
+                <article class="resource-card">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">MY</span>
+                        <h2>其他应用</h2>
+                    </div>
+                    <p class="app-description">适用于尚未提供专用页面的 Massimo Yao 应用。</p>
+                    <nav class="document-links" aria-label="通用应用文档">
+                        <a class="document-link" href="privacy-policy-zh.html">通用隐私政策</a>
+                        <a class="document-link" href="terms-of-service-zh.html">服务条款</a>
+                        <a class="document-link" href="support-zh.html">技术支持</a>
+                    </nav>
+                </article>
+            </div>
+        </section>
 
-    <div class="footer">
-        <p>This website is hosted on GitHub Pages</p>
-    </div>
+        <section class="language-panel" id="panel-en" data-language-panel="en" lang="en" hidden>
+            <h2 class="section-heading">App documents</h2>
+            <div class="resource-grid">
+                <article class="resource-card featured">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">HD</span>
+                        <h2>HideDesk</h2>
+                    </div>
+                    <p class="app-description">Desktop privacy protection for screen sharing, presentations, and recording.</p>
+                    <nav class="document-links" aria-label="HideDesk documents">
+                        <a class="document-link" href="hidedesk-privacy-policy-en.html">Privacy Policy</a>
+                        <a class="document-link" href="terms-of-service-en.html">Terms of Service</a>
+                        <a class="document-link" href="support-en.html">Support</a>
+                    </nav>
+                </article>
+
+                <article class="resource-card">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">AM</span>
+                        <h2>AegisMark</h2>
+                    </div>
+                    <p class="app-description">Desktop and screenshot watermarking for content attribution and protection.</p>
+                    <nav class="document-links" aria-label="AegisMark documents">
+                        <a class="document-link" href="privacy-policy-aegismark-en.html">Privacy Policy</a>
+                        <a class="document-link" href="terms-of-service-en.html">Terms of Service</a>
+                        <a class="document-link" href="support-en.html">Support</a>
+                    </nav>
+                </article>
+
+                <article class="resource-card">
+                    <div class="app-heading">
+                        <span class="app-mark" aria-hidden="true">MY</span>
+                        <h2>Other apps</h2>
+                    </div>
+                    <p class="app-description">General documents for Massimo Yao apps without a dedicated policy page.</p>
+                    <nav class="document-links" aria-label="General app documents">
+                        <a class="document-link" href="privacy-policy-en.html">General Privacy Policy</a>
+                        <a class="document-link" href="terms-of-service-en.html">Terms of Service</a>
+                        <a class="document-link" href="support-en.html">Support</a>
+                    </nav>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Massimo Yao</p>
+            <p>Hosted on GitHub Pages</p>
+        </footer>
+    </main>
 
     <script>
-        function switchLanguage(lang) {
-            // Update button states
-            document.querySelectorAll('.language-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`[onclick="switchLanguage('${lang}')"]`).classList.add('active');
+        const languageButtons = document.querySelectorAll("[data-language-button]");
+        const languagePanels = document.querySelectorAll("[data-language-panel]");
 
-            // Show/hide links based on language
-            if (lang === 'zh') {
-                document.querySelectorAll('.zh-link').forEach(link => {
-                    link.style.display = 'inline-block';
-                });
-                document.querySelectorAll('.en-link').forEach(link => {
-                    link.style.display = 'none';
-                });
-            } else {
-                document.querySelectorAll('.zh-link').forEach(link => {
-                    link.style.display = 'none';
-                });
-                document.querySelectorAll('.en-link').forEach(link => {
-                    link.style.display = 'inline-block';
-                });
-            }
+        function switchLanguage(language) {
+            document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+
+            languageButtons.forEach((button) => {
+                button.setAttribute(
+                    "aria-pressed",
+                    String(button.dataset.languageButton === language)
+                );
+            });
+
+            languagePanels.forEach((panel) => {
+                panel.hidden = panel.dataset.languagePanel !== language;
+            });
         }
+
+        languageButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                switchLanguage(button.dataset.languageButton);
+            });
+        });
     </script>
 </body>
 </html>

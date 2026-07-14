@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="HideDesk - Screen Privacy 专用隐私政策。">
+    <title>HideDesk 隐私政策</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --background: #f5f5f7;
+            --surface: rgba(255, 255, 255, 0.88);
+            --surface-strong: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #5c5c63;
+            --accent: #0066cc;
+            --border: rgba(0, 0, 0, 0.10);
+            --callout: #eef6ff;
+            --callout-border: #9bc8f7;
+            --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #101012;
+                --surface: rgba(30, 30, 33, 0.92);
+                --surface-strong: #1e1e21;
+                --text: #f5f5f7;
+                --secondary: #b7b7be;
+                --accent: #6cb6ff;
+                --border: rgba(255, 255, 255, 0.14);
+                --callout: #10273d;
+                --callout-border: #316b9f;
+                --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Text", "Segoe UI", sans-serif;
+            line-height: 1.75;
+            background: var(--background);
+            color: var(--text);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-underline-offset: 0.18em;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        .skip-link {
+            position: fixed;
+            inset: 12px auto auto 12px;
+            z-index: 2;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: var(--surface-strong);
+            transform: translateY(-160%);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        .page {
+            width: min(860px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 56px;
+        }
+
+        .language-nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+            font-size: 0.92rem;
+        }
+
+        .language-nav a {
+            padding: 6px 10px;
+        }
+
+        main {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        header {
+            padding: 48px 48px 36px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(145deg, var(--surface-strong), var(--surface));
+        }
+
+        .eyebrow {
+            margin: 0 0 8px;
+            color: var(--accent);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
+
+        .updated {
+            margin: 14px 0 0;
+            color: var(--secondary);
+        }
+
+        .content {
+            padding: 40px 48px 48px;
+        }
+
+        .summary {
+            margin: 0 0 36px;
+            padding: 20px 22px;
+            border: 1px solid var(--callout-border);
+            border-radius: 14px;
+            background: var(--callout);
+        }
+
+        .summary strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        section + section {
+            margin-top: 36px;
+            padding-top: 4px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 1.45rem;
+            line-height: 1.35;
+            letter-spacing: -0.015em;
+        }
+
+        h3 {
+            margin: 22px 0 8px;
+            font-size: 1.05rem;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 1.35rem;
+        }
+
+        li + li {
+            margin-top: 7px;
+        }
+
+        footer {
+            padding: 24px 48px;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                width: min(100% - 20px, 860px);
+                padding-top: 14px;
+            }
+
+            main {
+                border-radius: 16px;
+            }
+
+            header,
+            .content,
+            footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            header {
+                padding-top: 34px;
+            }
+        }
+
+        @media print {
+            :root {
+                --background: #ffffff;
+                --surface: #ffffff;
+                --surface-strong: #ffffff;
+                --text: #000000;
+                --secondary: #333333;
+                --border: #cccccc;
+                --callout: #f5f5f5;
+                --callout-border: #aaaaaa;
+                --shadow: none;
+            }
+
+            .language-nav,
+            .skip-link {
+                display: none;
+            }
+
+            .page {
+                width: 100%;
+                padding: 0;
+            }
+
+            main {
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#policy">跳至隐私政策正文</a>
+    <div class="page">
+        <nav class="language-nav" aria-label="语言">
+            <a href="hidedesk-privacy-policy-en.html" lang="en" hreflang="en">English</a>
+        </nav>
+
+        <main id="policy">
+            <header>
+                <p class="eyebrow">HideDesk - Screen Privacy</p>
+                <h1>隐私政策</h1>
+                <p class="updated"><strong>生效及最后更新日期：</strong>2026 年 7 月 15 日</p>
+            </header>
+
+            <div class="content">
+                <aside class="summary" aria-label="隐私摘要">
+                    <strong>隐私摘要</strong>
+                    HideDesk 专为在你的 Mac 上本地运行而设计。开发者不会收集、接收或出售你的个人数据。HideDesk 不包含广告、分析、跟踪、用户账户或开发者运营的服务器。所有与屏幕有关的处理均在你的设备上本地完成。
+                </aside>
+
+                <section aria-labelledby="scope">
+                    <h2 id="scope">1. 适用范围</h2>
+                    <p>本隐私政策仅适用于由 Massimo Yao（下称“开发者”或“我们”）开发并发布的 <strong>HideDesk - Screen Privacy</strong>（下称“HideDesk”），不适用于开发者发布的其他应用。</p>
+                </section>
+
+                <section aria-labelledby="collection">
+                    <h2 id="collection">2. 数据收集</h2>
+                    <p>HideDesk 不会向开发者传输个人数据、屏幕数据、使用数据、诊断信息或分析数据。我们不运营任何用于接收 HideDesk 数据的服务器。</p>
+                    <p>HideDesk 不包含第三方广告、分析、遥测、崩溃报告或跟踪 SDK。</p>
+                </section>
+
+                <section aria-labelledby="screen-recording">
+                    <h2 id="screen-recording">3. 屏幕录制权限</h2>
+                    <p>HideDesk 仅将 macOS 屏幕录制权限用于可选的<strong>录制检测</strong>、<strong>屏幕共享检测</strong>和<strong>会议检测</strong>功能。只有当你启用其中一项自动触发功能后，HideDesk 才会请求该权限。</p>
+                    <p>HideDesk 使用 Apple 的 ScreenCaptureKit，并且只检查：</p>
+                    <ul>
+                        <li>当前屏幕上可共享窗口所属应用的 Bundle Identifier；以及</li>
+                        <li>该窗口的标题。</li>
+                    </ul>
+                    <p>这些元数据只会在本地与固定的受支持应用列表及状态关键词进行匹配，用于判断是否存在录制或屏幕共享活动。仅运行会议应用本身不会触发 HideDesk。</p>
+                    <p><strong>HideDesk 不会创建屏幕捕获流，也不会捕获、录制、保存或传输屏幕像素、屏幕截图、视频、音频、麦克风数据、OCR 文本、按键、文档或任何窗口的可视内容。</strong></p>
+                    <p>即使不启用自动触发功能或不授予屏幕录制权限，你仍可使用手动隐藏模式及 HideDesk 的其他功能。</p>
+                </section>
+
+                <section aria-labelledby="local-processing">
+                    <h2 id="local-processing">4. 在设备上处理的其他数据</h2>
+                    <p>为提供相应功能，HideDesk 可能仅在你的设备上处理以下信息：</p>
+
+                    <h3>设置与偏好</h3>
+                    <p>功能开关、显示器选择、外观选项、键盘快捷键、自动化规则、预设、试用次数和本地购买权益状态。</p>
+
+                    <h3>受保护应用的选择</h3>
+                    <p>当你选择需要保护的应用时，HideDesk 会读取并保存该应用的显示名称、Bundle Identifier 和本地应用路径。HideDesk 仅访问你明确选择的应用包，或 macOS 作为运行中应用提供的信息。</p>
+
+                    <h3>应用及窗口布局元数据</h3>
+                    <p>启用应用保护时，HideDesk 可能检查运行中应用的身份和屏幕上窗口的布局元数据，例如进程标识符、所有者名称、窗口标识符、位置、尺寸、层级和可见状态，以正确隐藏应用或放置模糊遮罩。HideDesk 不会捕获这些窗口的可视内容。</p>
+
+                    <h3>临时恢复信息</h3>
+                    <p>隐藏模式启用期间，HideDesk 会创建本地恢复快照，以便将桌面、程序坞和受保护应用恢复到先前状态。根据你启用的保护功能，该快照可能包含显示器标识符、应用名称、Bundle Identifier、进程标识符、可执行文件路径、此前的隐藏或活跃状态、派生的触发类别及保护操作状态。</p>
+                </section>
+
+                <section aria-labelledby="purpose">
+                    <h2 id="purpose">5. 本地处理的用途</h2>
+                    <p>HideDesk 仅将本地处理的信息用于：</p>
+                    <ul>
+                        <li>应用你配置的隐私保护和自动化选项；</li>
+                        <li>在你启用自动触发功能后，检测指示录制或屏幕共享活动的状态；</li>
+                        <li>定位应用窗口的模糊遮罩；</li>
+                        <li>在隐藏模式结束或应用意外终止后恢复你的工作区；以及</li>
+                        <li>通过 Apple StoreKit 验证购买及恢复权益。</li>
+                    </ul>
+                    <p>这些信息不会用于广告、分析、跟踪、用户画像、数据挖掘或机器学习。</p>
+                </section>
+
+                <section aria-labelledby="storage">
+                    <h2 id="storage">6. 存储与保留期限</h2>
+                    <ul>
+                        <li><strong>屏幕录制元数据：</strong>窗口标题只会被临时处理，不会写入磁盘。候选应用标识符和检测状态仅在自动检测所需期间保留在内存中。</li>
+                        <li><strong>设置：</strong>HideDesk 将设置保存在本地的 Application Support 目录中，直至你更改或移除相应设置，或删除 HideDesk 的本地 Application Support 数据。</li>
+                        <li><strong>恢复快照：</strong>临时本地快照通常会在隐藏模式结束并完成恢复后删除。如果 HideDesk 意外终止，该快照可能保留在本地，直至 HideDesk 在后续启动时完成恢复或将其清除。</li>
+                    </ul>
+                    <p>HideDesk 不会将数据存储在开发者运营的服务器或开发者控制的云存储中。</p>
+                </section>
+
+                <section aria-labelledby="sharing">
+                    <h2 id="sharing">7. 共享与披露</h2>
+                    <p>HideDesk 不会将屏幕录制元数据、本地处理的应用信息、设置或派生的检测信息发送或共享给开发者、广告商、分析服务提供商、数据经纪商或任何其他第三方。</p>
+                    <p>如果你进行 App 内购买或恢复购买，Apple 会通过 StoreKit 和 App Store 处理交易。Apple 对购买和账户信息的处理受 Apple 自身隐私政策约束。HideDesk 只接收 StoreKit 向应用提供的产品和权益信息。</p>
+                </section>
+
+                <section aria-labelledby="control">
+                    <h2 id="control">8. 用户控制与删除</h2>
+                    <ul>
+                        <li>你可以关闭 HideDesk 中的所有自动触发功能，以停止与屏幕录制权限有关的处理。</li>
+                        <li>你可以随时前往<strong>系统设置 &gt; 隐私与安全性 &gt; 屏幕录制</strong>撤销屏幕录制权限。</li>
+                        <li>你可以在 HideDesk 设置中移除受保护应用、预设、自动化规则和其他已保存选择。</li>
+                        <li>退出 HideDesk 并删除其 Application Support 数据，即可删除 HideDesk 存储的全部本地数据。</li>
+                    </ul>
+                    <p>由于开发者不会接收或持有 HideDesk 用户数据，因此不存在可由我们访问、导出或删除的远程账户或服务器端用户记录。</p>
+                </section>
+
+                <section aria-labelledby="security">
+                    <h2 id="security">9. 安全性</h2>
+                    <p>HideDesk 在 macOS App Sandbox 中运行，并将本地文件保存在用户的 Application Support 区域内。屏幕录制和用户所选应用文件的访问仍受 macOS 权限控制。</p>
+                </section>
+
+                <section aria-labelledby="children">
+                    <h2 id="children">10. 儿童隐私</h2>
+                    <p>HideDesk 并非面向儿童设计，也不会有意收集儿童或其他任何用户的个人信息。</p>
+                </section>
+
+                <section aria-labelledby="changes">
+                    <h2 id="changes">11. 本政策的变更</h2>
+                    <p>当 HideDesk 的功能或法律义务发生变化时，我们可能更新本隐私政策。更新后的版本将发布在同一位置，并标明新的生效日期。</p>
+                </section>
+
+                <section aria-labelledby="contact">
+                    <h2 id="contact">12. 联系方式</h2>
+                    <p>如对本隐私政策或 HideDesk 的隐私实践有任何疑问，请联系：</p>
+                    <p><strong>开发者：</strong>Massimo Yao<br>
+                    <strong>电子邮箱：</strong><a href="mailto:chenyao6134@gmail.com">chenyao6134@gmail.com</a></p>
+                </section>
+            </div>
+
+            <footer>
+                <p>Copyright © 2026 Massimo Yao. 保留所有权利。</p>
+                <p><a href="index.html">返回首页</a></p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
